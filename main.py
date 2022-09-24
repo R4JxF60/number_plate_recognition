@@ -57,7 +57,7 @@ def run(files):
 
         filtered_img = cv.bilateralFilter(gray, 11, 17, 17)
 
-        edges = getEdges(filtered_img)
+        edges = getAutoEdges(filtered_img)
         cnts = getContours(edges)
         cnts_img = cv.drawContours(rotated_img.copy(), cnts, -1, (0,255,0), 1)
         cv.imshow('contours', cnts_img)
